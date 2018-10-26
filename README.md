@@ -11,4 +11,3 @@ A Powerful method to dynamically create Views and Viewholders in android . It's 
 
 
 Just dig it till you find what fits your apps needs.
-You may need to provide a layout. Make a layout or just use the one in the repo.
