@@ -8,3 +8,7 @@ A Powerful method to dynamically create Views and Viewholders in android . It's 
   TextView tv= new ViewBaker(context , "this is a button" );
   
     It supports many features such as chained commands and container layout making
+
+
+Just dig it till you find what fits your apps needs.
+You may need to provide a layout. Make a layout or just use the one in the repo.
