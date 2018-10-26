@@ -1,4 +1,4 @@
-package ir.drax.beauter.components;
+package your.app.package.components;
 
 import android.content.Context;
 import android.os.Build;
@@ -21,8 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import ir.drax.beauter.helper.Helpers;
 
 /**
  * Created by siamak on 10/7/16.
@@ -246,9 +244,19 @@ public class ViewBaker {
     private int randInt() {
         int highRand = 999999;
         int minRand = 100000;
-        return Helpers.randInt(minRand, highRand);
-    }
+         // NOTE: This will (intentionally) not run as written so that folks
+        // copy-pasting have to think about how to initialize their
+        // Random instance.  Initialization of the Random instance is outside
+        // the main scope of the question, but some decent options are to have
+        // a field that is initialized once and then re-used as needed or to
+        // use ThreadLocalRandom (if using at least Java 1.7).
+        Random rand = new Random();
 
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((highRand - minRand) + 1) + min;
+        return randomNum;
+    }
     public ViewPager Pager() {
         ViewPager viewPager = new ViewPager(context);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
